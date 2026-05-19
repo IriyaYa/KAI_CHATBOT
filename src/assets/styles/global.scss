@@ -1,0 +1,98 @@
+// ============================================================
+// ГЛОБАЛЬНЫЕ СТИЛИ — ГСТ АУРА ДИЗАЙН-СИСТЕМА
+// ============================================================
+
+// ── Переменные ──────────────────────────────────────────────
+:root {
+  // Фоны
+  --color-bg:        #111318;   // основной фон приложения
+  --color-bg-2:      #1a1e27;   // фон сайдбара и хедера
+  --color-bg-3:      #222736;   // фон карточек, инпутов
+  --color-bg-hover:  #2a3045;   // hover состояние
+
+  // Акценты
+  --color-accent:    #2563eb;   // основной синий (кнопки, активные эл.)
+  --color-accent-2:  #3b82f6;   // более светлый синий (иконки, ссылки)
+  --color-accent-3:  rgba(37, 99, 235, 0.15); // прозрачный синий (фон active)
+
+  // Текст
+  --color-text:      #e8eaf0;   // основной текст
+  --color-text-2:    #8b93a8;   // вторичный текст
+  --color-text-3:    #5a6278;   // плейсхолдеры
+
+  // Границы
+  --color-border:    rgba(100, 120, 180, 0.18);
+  --color-border-2:  rgba(100, 120, 200, 0.35);
+
+  // Статусы
+  --color-success:   #22c55e;
+  --color-warning:   #f59e0b;
+  --color-error:     #ef4444;
+
+  // Геометрия
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  14px;
+
+  // Размеры layout
+  --header-height:  54px;
+  --footer-height:  36px;
+  --sidebar-width:  240px;
+
+  // Типографика
+  --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+// ── Сброс стилей ───────────────────────────────────────────
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+// ── Скроллбары ─────────────────────────────────────────────
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-2);
+  border-radius: 3px;
+  &:hover { background: rgba(100, 120, 200, 0.5); }
+}
+
+// ── Утилиты ────────────────────────────────────────────────
+.text-secondary { color: var(--color-text-2); }
+.text-accent    { color: var(--color-accent-2); }
+.text-success   { color: var(--color-success); }
+.text-error     { color: var(--color-error); }
+
+// ── Анимации ───────────────────────────────────────────────
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.25s ease forwards;
+}
